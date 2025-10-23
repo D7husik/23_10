@@ -11,7 +11,9 @@ This model allows users to:
 - Define parent–child relationships  
 - Manage marriages and divorces  
 - Traverse and render **ancestors** and **descendants** up to a given generation  
-- Display individual information and relationships  
+- Display individual information and relationships
+
+It demonstrates encapsulation, inheritance, polymorphism, abstraction, and composition through a modular and extensible design.
 
 It uses **object-oriented design** and **strategy-based traversal and rendering** for flexible tree exploration.
 
@@ -36,16 +38,21 @@ It uses **object-oriented design** and **strategy-based traversal and rendering*
 
 ## 🏗️ OOP Concepts and Design Patterns Used
 
-| Concept / Pattern | Implementation |
-|--------------------|----------------|
-| **Encapsulation** | Private fields with controlled getters/setters in `Person` |
-| **Inheritance** | `Adult` and `Minor` inherit from abstract `Person` |
-| **Polymorphism** | `TraversalStrategy` and `Renderer` interfaces have multiple implementations |
-| **Factory Pattern** | `PersonFactory` dynamically creates `Adult` or `Minor` |
-| **Singleton Pattern** | `PersonFactory` has a single shared instance |
-| **Strategy Pattern** | `FamilyTree` can swap out traversal and rendering strategies dynamically |
-| **Composition / Aggregation** | `FamilyTree` manages multiple `Person` objects and their relationships |
-| **Exception Handling** | Robust validation and `IllegalArgumentException` for rule enforcement |
+
+
+| Concept / Pattern             | Implementation                                                                |
+| ----------------------------- | ----------------------------------------------------------------------------- |
+| **Encapsulation**             | All `Person` fields are private; accessed via getters/setters with validation |
+| **Inheritance**               | `Adult` and `Minor` inherit from abstract base `Person`                       |
+| **Polymorphism**              | Dynamic dispatch via `Renderer` and `TraversalStrategy` interfaces            |
+| **Abstraction**               | Abstract `Person` class defines shared behavior for all person types          |
+| **Factory Pattern**           | `PersonFactory` dynamically creates instances (`Adult` or `Minor`)            |
+| **Singleton Pattern**         | `PersonFactory` provides a single shared instance                             |
+| **Strategy Pattern**          | `FamilyTree` can swap traversal and rendering strategies dynamically          |
+| **Composite Pattern**         | Each `Person` acts as a node with children (tree-like structure)              |
+| **Composition / Aggregation** | `FamilyTree` aggregates multiple `Person` objects                             |
+| **Error Handling**            | Invalid operations throw `IllegalArgumentException`                           |
+
 
 ---
 UML DIAGRAMM
